@@ -1,4 +1,6 @@
+import { creds } from 'creds/creds';
+
 export const environment = {
   production: true,
-  unsplash: '',
+  unsplash: creds.unsplash,
 };
