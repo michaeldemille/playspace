@@ -3,6 +3,7 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Lightbox } from 'ngx-lightbox'; /* added the import for the Lightbox component */
+import { environment } from 'environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,7 @@ export class AppComponent {
   public images: any[] = [];
   public page: number = 2;
   public heroImageUrl: string = ''; /* added the heroImageUrl property */
-  public unsplashApiKey = 'CSacKh6uGEo-f9wCUQF2J94bfeEYJPloJX99kBqnv60';
+  public unsplashApiKey = environment.unsplash;
 
   constructor(private http: HttpClient, private _lightbox: Lightbox) {
     const unsplashApiUrl = `https://api.unsplash.com/photos/random?client_id=${this.unsplashApiKey}`;
